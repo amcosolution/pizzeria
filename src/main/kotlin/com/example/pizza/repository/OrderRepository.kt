@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface OrderRepository : JpaRepository<ToppingOrder, Long> {
-
     fun findByEmail(email: String): ToppingOrder?
 }

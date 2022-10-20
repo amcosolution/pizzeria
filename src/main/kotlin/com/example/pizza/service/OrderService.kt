@@ -11,6 +11,7 @@ import java.util.stream.Collectors
 class OrderService(
     val orderRepository: OrderRepository
 ) {
+    val personalEmail = "a.maiseyenak@gmail.com"
     fun getOrders(): Map<String, Int> {
         val list = orderRepository.findAll()
         val toppingMap = list.stream().flatMap{ obj: ToppingOrder -> obj.toppings.stream()}
@@ -24,7 +25,7 @@ class OrderService(
     }
 
     fun getBestToppings(): Set<String>? =
-        orderRepository.findByEmail("a.maiseyenak@gmail.com")?.toppings
+        orderRepository.findByEmail(personalEmail)?.toppings
 
     fun createOrder(dto: ToppingOrderDto) {
         val order = orderRepository.findByEmail(dto.email)
