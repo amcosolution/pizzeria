@@ -3,6 +3,7 @@ package com.example.pizza.controller
 import com.example.pizza.dto.ToppingOrderDto
 import com.example.pizza.service.OrderService
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/orders")
@@ -22,7 +23,7 @@ class OrderController(
     }
 
     @PostMapping
-    fun createOrder(@RequestBody dto: ToppingOrderDto) {
+    fun createOrder(@Valid @RequestBody dto: ToppingOrderDto) {
         orderService.createOrder(dto)
     }
 }
