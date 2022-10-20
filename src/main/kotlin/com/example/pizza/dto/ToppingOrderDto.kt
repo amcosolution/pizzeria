@@ -6,5 +6,4 @@ class ToppingOrderDto (
     @field:Email
     val email: String,
     val toppings: Set<String>
-    ) {
-}
+    )

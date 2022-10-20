@@ -1,8 +1,9 @@
 package com.example.pizza.controller
 
+import com.example.pizza.dto.MessageDto
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -13,10 +14,10 @@ class IntroductionController {
     val filePath = "src/main/resources/README.txt"
 
     @GetMapping
-    fun index() = readFile(filePath, StandardCharsets.UTF_8)
+    fun index() = ResponseEntity.ok(MessageDto(readFile(filePath)))
 
-    fun readFile(path: String, encoding: Charset): String {
+    fun readFile(path: String): String {
         val encoded = Files.readAllBytes(Paths.get(path))
-        return String(encoded, encoding)
+        return String(encoded, StandardCharsets.UTF_8)
     }
 }
