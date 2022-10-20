@@ -3,4 +3,4 @@ Answer: My favorite tech stack: Java 8+, Spring Boot, Spring JPA, PostgreSQL, AW
 
 Question 2: What makes you a great back end engineer, and why?
 Answer: First of all I like Java language. I am interested in learning new features and approaches.
-        Also, I am very diligent and responsible person and try to do my best.
+        Also, I am very diligent and responsible person and try to do my best
